@@ -88,8 +88,9 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList, callback) {
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  return callback(numberList.reduce(reducer));
+  return callback (numberList.reduce(function(accumulator,numberList){
+    return accumulator + numberList;
+  },0));
 }
 
 /**
@@ -182,7 +183,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function getFullNames(runners) {
   let names = [];
   runners.forEach(function(items){
-    return names.push(`${items.last_name}, ${items.first_name}`)
+    return names.push(`${items.last_name}, ${items.first_name}`);
   })
   return runners;
 }
@@ -199,8 +200,10 @@ function getFullNames(runners) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let map1 = runners.map(function (first_name){
+    return (first_name.toUpperCase);
+  });
 }
 
 /**
