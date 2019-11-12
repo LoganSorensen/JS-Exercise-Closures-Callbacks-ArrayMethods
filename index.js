@@ -136,7 +136,7 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  
+  return callback(list.includes(item));
 }
 
 /**
@@ -183,9 +183,9 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function getFullNames(runners) {
   let names = [];
   runners.forEach(function(items){
-    return names.push(`${items.last_name}, ${items.first_name}`);
+    names.push(`${items.last_name}, ${items.first_name}`);
   })
-  return runners;
+  return names;
 }
 
 /**
